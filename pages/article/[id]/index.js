@@ -17,11 +17,12 @@ export default Article
 
 
 export const getStaticProps = async (context) => {
-    const res = await fetch(`${server}/api/articles/${context.params.id}`);
+
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
+
+    // const res = await fetch(`${server}/api/articles/${context.params.id}`);
 
     const article = await res.json();
-
-    console.log(article);
 
     return {
         props: {
@@ -53,6 +54,9 @@ export const getStaticPaths = async () => {
 
 
 // export const getServerSideProps = async (context) => {
+
+    // const res = await fetch(`${server}/api/articles/${context.params.id}`);
+
 //     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
 
 //     const article = await res.json();
