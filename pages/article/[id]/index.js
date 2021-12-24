@@ -34,7 +34,9 @@ export const getStaticProps = async (context) => {
 // Required for dynamic SSG pages
 // Will compile in build time
 export const getStaticPaths = async () => {
-    const res = await fetch(`${server}/api/articles`);
+    // const res = await fetch(`${server}/api/articles`);
+
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 
     const articles = await res.json();
 
